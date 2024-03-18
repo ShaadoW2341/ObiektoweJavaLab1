@@ -1,0 +1,88 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Imie: " + imie("Krzysztof"));
+        System.out.println("wiek: "+ wiek(21));
+
+        double a = InputDouble();
+        double b = InputDouble();
+        kalkulator(a,b);
+
+        int c = 4;
+        System.out.println(Par(c));
+
+        int d = 9;
+        System.out.println(Div(d));
+
+        int e = 2;
+        System.out.println(Szescian(e));
+
+        double f = 64;
+        System.out.println(Pierw(f));
+
+        int g = Input();
+        int h = Input();
+        int lim1 = ran(g,h);
+        System.out.println(lim1);
+        int lim2 = ran(g,h);
+        int i = Input();
+        System.out.println(Troj(lim1,lim2,i));
+
+    }
+
+    public static int wiek(int wiek){return 21;}
+
+    public static String imie(String imie){return imie;}
+
+    public static void kalkulator(double a, double b){
+        System.out.println("Suma "+ a+" + "+b + " = "+ (a+b));
+        System.out.println("Suma "+ a+" + "+b + " = "+ (a-b));
+        System.out.println("Suma "+ a+" + "+b + " = "+ (a*b));
+    }
+
+    public static double InputDouble(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Podaj liczbe: ");
+        double liczba = input.nextDouble();
+        return liczba;
+    }
+
+    public static int Input(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Podaj bok: ");
+        int a = input.nextInt();
+        return a;
+    }
+
+    public static Boolean Par(int c){
+        if (c%2 == 0) return true;
+        else return false;
+    }
+
+    public static Boolean Div(int d){
+        if (d%3 == 0 && d%5 == 0) return true;
+        else return false;
+    }
+
+    public static int Szescian(int e){
+        return e*e*e;
+    }
+
+    public static double Pierw(double f){
+        return Math.sqrt(f);
+    }
+
+    public static int ran(int a, int b){
+        Random generator = new Random();
+        int wynik = generator.nextInt(b-a+1)+a;
+
+        return wynik;
+    }
+    public static Boolean Troj(int a, int b, int c){
+        if ((a*a)+(b*b)==(c*c)||(c*c)+(b*b)==(a*a)||(a*a)+(c*c)==(b*b)) return true;
+        else return false;
+    }
+}

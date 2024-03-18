@@ -1,0 +1,103 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+//        System.out.println("Średnia to: "+sredniaPunktow());
+//        liczby();
+//        System.out.println("Suma ciągu wynosi: " + ciag());
+        System.out.println(czyJestPalindrom("Pomidor"));
+        System.out.println(czyJestPalindrom("Kajak"));
+    }
+    public static int Input(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Podaj liczbę: ");
+        int a = input.nextInt();
+        return a;
+    }
+
+    public static int ran(int a) {
+        Random generator = new Random();
+        int wynik = generator.nextInt(56)-10;
+        return wynik;
+    }
+
+
+    public static boolean czyJestPalindrom(String slowo) {
+        slowo = slowo.replaceAll("\\s+", "").toLowerCase();
+        int lewy = 0;
+        int prawy = slowo.length() - 1;
+        while (lewy < prawy) {
+            if (slowo.charAt(lewy) != slowo.charAt(prawy)) {
+                return false;
+            }
+            lewy++;
+            prawy--;
+        }
+        return true;
+    }
+
+
+//    public static int ciag(){
+//        int n = Input();
+//        int suma = 0;
+//        if(n>0){
+//            for (int i = 0; i < n; i++) {
+//                int r = ran(i);
+//                System.out.println("wylosowano: "+r);
+//                if (r % 2 == 0){
+//                    suma += r;
+//                }
+//            }
+//
+//            return suma;
+//        }
+//        else
+//        return 0;
+//    }
+
+//    static double  sredniaPunktow(){
+//        int n = Input();
+//        int i=0;
+//        int j= i+1;
+//        int suma = 0;
+//        int[] tab = new int [n];
+//        while(i<n){
+//            System.out.println("podaj punktacje dla studenta numer"+j );
+//            int punkty = Input();
+//            tab[i] = punkty;
+//            suma += tab[i];
+//            i++;
+//            j++;
+//        }
+//        double srednia = (double) suma /n;
+//        return srednia;
+//    }
+
+//    public static void liczby(){
+//        int i=0;
+//        int ujemne = 0;
+//        int dodatnie= 0;
+//        int sumadot=0;
+//        int sumaujem=0;
+//        int[] tab=new int[10];
+//        while(i< tab.length){
+//            tab[i]= Input();
+//            if(tab[i]<0){
+//                sumaujem+=tab[i];
+//                ujemne++;
+//            }
+//            if(tab[i]>=0){
+//                sumadot+=tab[i];
+//                dodatnie++;
+//            }
+//            i++;
+//
+//        }
+//        System.out.println(" Ilosc liczb dodatnich: "+dodatnie+" ,a ilosc ujemnych to: "+ujemne+
+//                " suma liczb dodatnich to: "+sumadot+" ,a suma ujemnych to: "+sumaujem);
+//
+//    }
+
+}
